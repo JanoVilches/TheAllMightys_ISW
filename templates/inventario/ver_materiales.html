@@ -1,0 +1,31 @@
+{% extends "base/base2.html" %}
+
+{% block title %}Ver Materiales{% endblock  %}
+
+{% block content %}
+  <table class='table table-bordered'>
+    <thead>
+      <tr>
+        <td>Nombre</td>
+        <td>codigo</td>
+        <td>cantidad</td>
+      </tr>
+    </thead>
+
+    <tbody>
+      {% if materiales %}
+      {% for m in materiales %}
+      <tr>
+        <td>{{m.nombre_material}}</td>
+        <td>{{m.codigo}}</td>
+        <td>{{m.cantidad}}</td>
+      </tr>
+      {% endfor %}
+      {% else %}
+      <h1>No Hay Registros de Materiales</h1>
+      {% endif %}
+
+    </tbody>
+
+  </table>
+{% endblock %}
