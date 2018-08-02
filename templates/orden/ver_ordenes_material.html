@@ -1,0 +1,33 @@
+{% extends "base/base2.html" %}
+
+{% block title %}Ver Materiales{% endblock  %}
+
+{% block content %}
+  <table class='table table-bordered'>
+    <thead>
+      <tr>
+        <td>codigo_orden</td>
+        <td>material</td>
+        <td>fecha_termino</td>
+        <td>cantidad_material</td>
+      </tr>
+    </thead>
+
+    <tbody>
+      {% if ordenes_mat %}
+      {% for orden in ordenes_mat %}
+      <tr>
+        <td>{{orden.codigo_orden}}</td>
+        <td>{{orden.material}}</td>
+        <td>{{orden.fecha_termino}}</td>
+        <td>{{orden.cantidad_material}}</td>
+      </tr>
+      {% endfor %}
+      {% else %}
+      <h1>No Hay Registros de Materiales</h1>
+      {% endif %}
+
+    </tbody>
+
+  </table>
+{% endblock %}

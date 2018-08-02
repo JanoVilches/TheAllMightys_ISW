@@ -18,8 +18,6 @@ from django.conf.urls import url, include
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^agregar_material/', include('Inventario.urls')),
-    url(r'^ver_materiales/', include('Inventario.urls')),
-    url(r'^solicitar_material/', include('Inventario.urls')),
-    url(r'^index/', include('Inventario.urls')),
+    url(r'', include('Inventario.urls')),
+    url(r'', include('Orden.urls')),
 ]
