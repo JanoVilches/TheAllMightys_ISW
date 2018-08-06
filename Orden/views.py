@@ -9,7 +9,7 @@ def ordenar_material_view(request):
         form = Ordenar_material_Form(request.POST)
         if form.is_valid():
             form.save()
-        return redirect('orden_material_list')
+        return redirect('orden_materiales_list')
 
     else:
         form = Ordenar_material_Form()
@@ -18,5 +18,5 @@ def ordenar_material_view(request):
 
 def ordenes_material_list(request):
     orden_consult = Orden_Material.objects.all()
-    contexto = {'ordenes_mat': orden_consult}
-    return render(request, 'orden/ver_ordenes_material.html', contexto)
+    cont = {'ordenes_mat': orden_consult}
+    return render(request, 'orden/ver_ordenes_materiales.html', cont)
