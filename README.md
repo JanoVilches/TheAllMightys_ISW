@@ -19,6 +19,11 @@ Integrantes:
  Instrucciones de Uso del Software: 
    La pagina contiene un menu que sera con el cual nos moveremos entre las opciones de la pagina.
    
+   Admin:
+   Para ver la base de datos desde el server ingresar a localhost:8000/admin, creamos un usuario para el ayudante.
+   Usuario: Paula
+   Password: isw20181
+   
    Bodega:
    1. Ver Inventario: esta opcion nos permite ver los materiales que existen en la BD y con los cuales se esta trabajando en la pagina
    2. Agregar material: esta opcion nos permite agregar un nuevo material a la BD, para esto completamos todo los campos del formulario con lo que corresponda y damos a guardar. Luego de esto, nos mostrara nuevamente el inventario, confirmando que se ingreso correctamente el material.
