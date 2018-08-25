@@ -5,50 +5,38 @@
 
 {% block content %}
 
-  <form method="post">
-    {% csrf_token %}
-    <div class = "row">
-      <div class="col-md-8 col-md-offset-2">
-        <div class="form-group">
-          <label>Nombre de Usuario:</label><br>
-          <input class="form-control" type = "text" name="username"><br><br>
-      </div>
-    </div>
-  </div>
-  <div class = "row">
-    <div class="col-md-8 col-md-offset-2">
-      <div class="form-group">
-        <label>Email:</label><br>
-        <input class="form-control" type = "email" name="email"><br><br>
-    </div>
-  </div>
-</div>
-  <div class = "row">
-    <div class="col-md-8 col-md-offset-2">
-      <div class="form-group">
-        <label>Contraseña:</label><br>
-        <input class="form-control" type = "password" name="password"><br><br>
-      </div>
-    </div>
-  </div>
-
-  <div class = "row">
-    <div class="col-md-8 col-md-offset-2">
-      <div class="form-group">
-        <select name="tipo_usuario">
-          <option value="1">Bodeguero</option>
-          <option value="2">Encargado de Compras</option>
-          <option value="3">Obrero</option>
-        </select>
-      </div>
-    </div>
-  </div>
-
-
-  <div class = "row">
-    <div class="col-md-8 col-md-offset-2">
-        <button class="btn btn-primary" type = "submit">Guardar</button><br><br>
-  </div>
-</div>
-  </form>
+<form method="post">
+	{% csrf_token %}
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+			<div class="form-group">
+				<label>Usuario</label>
+				{{form.username}}
+			</div>
+		</div>
+		<div class="col-md-8 col-md-offset-2">
+			<div class="form-group">
+				<label>Contraseña</label>
+				{{form.password}}
+			</div>
+		</div>
+		<div class="col-md-8 col-md-offset-2">
+			<div class="form-group">
+				<label>Correo</label>
+				{{form.email}}
+			</div>
+		</div>
+		<div class="col-md-8 col-md-offset-2">
+			<div class="form-group">
+				<label>Tipo de Usuario</label>
+				{{form2.tipo_usuario}}
+			</div>
+		</div>
+	</div>
+	<div class="col-md-8 col-md-offset-2">
+			<div class="form-group">
+				<button class="btn btn-primary" type="submit">Guardar</button>
+			</div>
+		</div>
+</form>
 {% endblock content %}
