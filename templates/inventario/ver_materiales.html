@@ -9,6 +9,7 @@
         <td>Nombre</td>
         <td>codigo</td>
         <td>cantidad</td>
+        <td>Acciones</td>
       </tr>
     </thead>
 
@@ -19,6 +20,10 @@
         <td>{{m.nombre_material}}</td>
         <td>{{m.codigo}}</td>
         <td>{{m.cantidad}}</td>
+        <td>
+          <a class="btn btn-primary" href="{% url 'editar_material' m.id %}">Editar</a>
+          <a class="btn btn-danger" href="{% url 'eliminar_material' m.id %}">Eliminar</a>
+        </td>
       </tr>
       {% endfor %}
       {% else %}

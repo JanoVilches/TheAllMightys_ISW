@@ -1,0 +1,13 @@
+{% extends "base/base2.html" %}
+
+{% block content %}
+<form method="post">
+  {% csrf_token %}
+  <h3>¿Esta seguro que desea eliminar el material {{material.nombre_material}}?</h3>
+
+  <button class="btn btn-danger" type="submit">Sí, eliminar</button>
+  <a class="btn btn-primary" href="{% url 'ver_materiales' %}">Cancelar</a>
+
+</form>
+
+{% endblock content %}
