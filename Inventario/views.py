@@ -24,14 +24,10 @@ def Ingresar_material_view(request):
     return render(request, 'inventario/agregar_material.html', {'form':form})
 
 def materiales_list(request):
-<<<<<<< HEAD
     if not request.user.is_authenticated:
         return HttpResponseRedirect('/?next=%s' % request.path)
-        
-    materiales_consult = Material.objects.all()
-=======
+
     materiales_consult = Material.objects.all().order_by('id')
->>>>>>> master
     contexto = {'materiales': materiales_consult}
     return render(request, 'inventario/ver_materiales.html', contexto)
 
