@@ -1,6 +1,6 @@
 {% extends "base/base2.html" %}
 
-{% block title %}Ver Ordenes{% endblock  %}
+{% block title %}Ver Ordenes Materiales{% endblock  %}
 
 {% block content %}
   <table class='table table-bordered'>
@@ -10,6 +10,8 @@
         <td>material</td>
         <td>fecha_termino</td>
         <td>cantidad_material</td>
+        <td>Estado</td>
+        <td>Acciones</td>
       </tr>
     </thead>
 
@@ -21,6 +23,16 @@
         <td>{{orden.material}}</td>
         <td>{{orden.fecha_termino}}</td>
         <td>{{orden.cantidad_material}}</td>
+        {% if orden.estado == "Pendiente" %}
+        <td bgcolor="red">{{orden.estado}}</td>
+        {% elif orden.estado == "Despachado" %}
+        <td bgcolor="yellow">{{orden.estado}}</td>
+        {% else %}
+        <td bgcolor="green">{{orden.estado}}</td>
+        {% endif %}
+        <td>
+          <a class="btn btn-primary" href="{% url 'editar_estado' orden.id %}">Cambiar Estado</a>
+        </td>
       </tr>
       {% endfor %}
       {% else %}

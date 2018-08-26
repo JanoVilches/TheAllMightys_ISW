@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
-from Orden.forms import Ordenar_material_Form
-from Orden.models import Orden_Material
+from Orden.forms import Ordenar_material_Form, Orden_Compra_Form
+from Orden.models import Orden_Material, Orden_Compra
 
 # Create your views here.
 
@@ -20,3 +20,31 @@ def ordenes_material_list(request):
     orden_consult = Orden_Material.objects.all()
     cont = {'ordenes_mat': orden_consult}
     return render(request, 'orden/ver_ordenes_materiales.html', cont)
+
+def estado_edit(request, id_orden):
+    orden = Orden_Material.objects.get(id = id_orden)
+    if request.method == 'GET':
+        form = Ordenar_material_Form(instance=orden)
+    else:
+        form = Ordenar_material_Form(request.POST, instance=orden)
+        if form.is_valid():
+            form.save()
+        return redirect('orden_materiales_list')
+    return render(request, 'orden/solicitar_material.html', {'form':form})
+
+def orden_compra_view(request):
+    if request.method == 'POST':
+        form = Orden_Compra_Form(request.POST)
+        if form.is_valid():
+            form.save()
+        return redirect('orden_compra_list')
+
+    else:
+        form = Orden_Compra_Form()
+
+    return render(request, 'orden/solicitar_compra.html', {'form':form})
+
+def ordenes_compra_list(request):
+    orden_consult = Orden_Compra.objects.all()
+    cont = {'ordenes_comp': orden_consult}
+    return render(request, 'orden/ver_ordenes_compra.html', cont)

@@ -8,3 +8,9 @@ class Orden_Material(models.Model):
     material = models.ForeignKey(Material,null=True,blank=True,on_delete=models.CASCADE)
     fecha_termino = models.DateField()
     cantidad_material = models.IntegerField(default=0,blank=False,null=True)
+    estado = models.CharField(max_length=50,blank=False,null=True)
+
+class Orden_Compra(models.Model):
+    codigo_compra = models.CharField(max_length=50,blank=False,null=True)
+    material = models.ForeignKey(Material,null=True,blank=True,on_delete=models.CASCADE)
+    cantidad_material = models.IntegerField(default=0,blank=False,null=True)

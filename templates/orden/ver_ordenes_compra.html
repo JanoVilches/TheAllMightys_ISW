@@ -1,30 +1,28 @@
 {% extends "base/base2.html" %}
 
-{% block title %}Ver Materiales{% endblock  %}
+{% block title %}Ver Ordenes Compra{% endblock  %}
 
 {% block content %}
   <table class='table table-bordered'>
     <thead>
       <tr>
-        <td>codigo_orden</td>
+        <td>codigo_compra</td>
         <td>material</td>
-        <td>fecha_termino</td>
         <td>cantidad_material</td>
       </tr>
     </thead>
 
     <tbody>
-      {% if ordenes_mat %}
-      {% for orden in ordenes_mat %}
+      {% if ordenes_comp %}
+      {% for orden in ordenes_comp %}
       <tr>
-        <td>{{orden.codigo_orden}}</td>
+        <td>{{orden.codigo_compra}}</td>
         <td>{{orden.material}}</td>
-        <td>{{orden.fecha_termino}}</td>
         <td>{{orden.cantidad_material}}</td>
       </tr>
       {% endfor %}
       {% else %}
-      <h1>No Hay Registros de Materiales</h1>
+      <h1>No Hay Registros de Ordenes</h1>
       {% endif %}
 
     </tbody>
