@@ -109,14 +109,6 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': ['rest_framework.authentication.SessionAuthentication']
 }
 
-info = xmlrpc.client.ServerProxy('https://demo.odoo.com/start').start()
-url, db, username, password = info['host'], info['database'], info['user'], info['password']
-common = xmlrpc.client.ServerProxy('{}/xmlrpc/2/common'.format(url))
-uid = common.authenticate(db, username, password, {})
-models = xmlrpc.client.ServerProxy('{}/xmlrpc/2/object'.format(url))
-lista = models.execute_kw(db, uid, password,'account.invoice', 'search_read', [[['commercial_partner_id','=',57]]],{'limit':1})
-print(lista)
-
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
 
