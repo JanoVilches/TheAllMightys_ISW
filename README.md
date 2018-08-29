@@ -14,21 +14,23 @@ Integrantes:
      pip install -r requirements.txt
   5. Con esto ya podemos comenzar a correr el servidor, asi que ahora nos movemos a la carpeta contenedora del proyecto /TheAllMightys_ISW
   una vez dentro corremos el servidor realizando el comando: python manage.py runserver
-  6. Una vez iniciado el servidor, vamos a internet e ingresamos a la Url: localhost:8000/Home
+  6. Una vez iniciado el servidor, vamos a internet e ingresamos a la Url: localhost:8000
   
  Instrucciones de Uso del Software: 
-   La pagina contiene un menu que sera con el cual nos moveremos entre las opciones de la pagina.
-   
    Admin:
    Para ver la base de datos desde el server ingresar a localhost:8000/admin, creamos un usuario para el ayudante.
    Usuario: Paula
    Password: isw20181
    
+   Este usuario es necesario para ingresar a la pagina a travez del login, una vez dentro se desplegará la pagina principal, para movernos entre las diferentes opciones, usamos el menu presente en la barra de la pagina.
+   
    Bodega:
-   1. Ver Inventario: esta opcion nos permite ver los materiales que existen en la BD y con los cuales se esta trabajando en la pagina
+   1. Ver Inventario: esta opcion nos permite ver los materiales que existen en la BD y con los cuales se esta trabajando en la pagina. Estan habilitados los botones de editar y eliminar, los cuales nos permite cambiar la cantidad de materiales presentes o algun otro elemento que se requiera, eliminar, nos permite borrar para siempre el material. 
    2. Agregar material: esta opcion nos permite agregar un nuevo material a la BD, para esto completamos todo los campos del formulario con lo que corresponda y damos a guardar. Luego de esto, nos mostrara nuevamente el inventario, confirmando que se ingreso correctamente el material.
    
    Ordenes:
-   1. Ver Ordenes: esta opcion nos permite ver las ordenes de materiales existentes en la BD, con su fecha limite correspondiente.
-   2. Ordenar Material: esta opcion nos permite crear una nueva orden de material, para esto procedemos a rellenar todos los campos del formulario, teniendo extremo cuidado en el campo de la fecha, ya que si se ingresa un mal formato de fecha la orden no sera agregada y se debera realizar el procedo desde cero. Un buen formato de fecha corresponde a: AAAA-MM-DD.
+   1. Ver Ordenes Materiales: esta opcion nos permite ver las ordenes de materiales existentes en la BD, con su fecha limite correspondiente, se puede cambiar el estado de la orden a travez del boton, los estado posibles son [Pendiente, Despachado, Entregado]. Favor mantener esos estados, y no usar otros. 
+   2. Ordenar Material: esta opcion nos permite crear una nueva orden de material, para esto procedemos a rellenar todos los campos del formulario, teniendo extremo cuidado en el campo de la fecha, ya que si se ingresa un mal formato de fecha la orden no sera agregada y se debera realizar el procedo desde cero. Un buen formato de fecha corresponde a: AAAA-MM-DD. Ademas de que se debe agregar el estado, el cual siempre al crear una orden debe ser "Pendiente".
+   3.Orden de compra: esta opcion nos permite crear una nueva orden de compra que sera enviada a Laudus. Rellenar todos los cambos, eligiendo el material a comprar y su cantidad.
+   4. Ver Ordenes Compra: esta opcion nos permite ver las ordenes de compra que se han creado. 
    
