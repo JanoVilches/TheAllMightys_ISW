@@ -1,0 +1,33 @@
+{% extends "base/base2.html" %}
+
+{% block title %}Ordenes desde ERP{% endblock  %}
+
+{% block content %}
+  <table class='table table-bordered'>
+    <thead>
+      <tr>
+        <td>Código Factura</td>
+        <td>Fecha de Creación</td>
+        <td>Monto Total</td>
+        <td>Usuario</td>
+      </tr>
+    </thead>
+
+    <tbody>
+      {% if ordenes %}
+      {% for m in ordenes %}
+      <tr>
+        <td>{{m.id}}</td>
+        <td>{{m.create_date}}</td>
+        <td>{{m.amount_total}}</td>
+        <td>{{m.user_id}}</td>
+      </tr>
+      {% endfor %}
+      {% else %}
+      <h1>No Hay Registros de Órdenes</h1>
+      {% endif %}
+
+    </tbody>
+
+  </table>
+{% endblock %}

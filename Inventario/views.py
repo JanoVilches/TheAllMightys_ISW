@@ -1,14 +1,20 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from Inventario.forms import Ingresar_material_Form
 from Inventario.models import Material
 
 # Create your views here.
 
 def index(request):
+    if not request.user.is_authenticated:
+        return HttpResponseRedirect('/?next=%s' % request.path)
+
     return render(request, 'inventario/index.html')
 
 def Ingresar_material_view(request):
+    if not request.user.is_authenticated:
+        return HttpResponseRedirect('/?next=%s' % request.path)
+
     if request.method == 'POST':
         form = Ingresar_material_Form(request.POST)
         if form.is_valid():
@@ -21,6 +27,9 @@ def Ingresar_material_view(request):
     return render(request, 'inventario/agregar_material.html', {'form':form})
 
 def materiales_list(request):
+    if not request.user.is_authenticated:
+        return HttpResponseRedirect('/?next=%s' % request.path)
+
     materiales_consult = Material.objects.all().order_by('id')
     contexto = {'materiales': materiales_consult}
     return render(request, 'inventario/ver_materiales.html', contexto)
