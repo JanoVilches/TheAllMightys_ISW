@@ -25,7 +25,7 @@ class Ordenar_material_Form(forms.ModelForm):
         widgets = {
             'codigo_orden': forms.TextInput(attrs={'class':'form-control'}),
             'material': forms.Select(attrs={'class':'form-control'}),
-            'fecha_termino':forms.DateTimeInput(attrs={'class':'form-control'}),
+            'fecha_termino':forms.DateInput(attrs={'class':'form-control'}),
             'cantidad_material': forms.NumberInput(attrs={'class':'form-control'}),
             'estado': forms.TextInput(attrs={'class':'form-control'}),
         }

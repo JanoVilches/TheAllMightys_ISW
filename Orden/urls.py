@@ -9,5 +9,9 @@ urlpatterns = [
     url(r'crear_orden_compra', orden_compra_view, name='orden_compra'),
     url(r'ordenes_erp', ordenes_from_erp, name='orden_erp'),
     url(r'editar_orden/(?P<id_orden>\d+)/$', estado_edit, name='editar_estado'),
+<<<<<<< HEAD
+=======
+    url(r'router', include(router.urls)),
+>>>>>>> 2c6fbda840c588c2cc0be3553a193a324af40627
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
