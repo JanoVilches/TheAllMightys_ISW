@@ -12,6 +12,6 @@ urlpatterns = [
     url(r'orden_compra_list', ordenes_compra_list, name='orden_compra_list'),
     url(r'crear_orden_compra', orden_compra_view, name='orden_compra'),
     url(r'editar_orden/(?P<id_orden>\d+)/$', estado_edit, name='editar_estado'),
-    url(r'^', include(router.urls)),
+    url(r'router', include(router.urls)),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]

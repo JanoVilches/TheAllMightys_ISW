@@ -19,7 +19,7 @@ def ordenar_material_view(request):
     if not request.user.is_authenticated:
         return HttpResponseRedirect('/?next=%s' % request.path)
 
-    if not request.method == 'POST':
+    if request.method == 'POST':
         form = Ordenar_material_Form(request.POST)
         if form.is_valid():
             form.save()
