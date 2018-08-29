@@ -16,7 +16,6 @@ Including another URLconf
 from django.contrib import admin
 from django.conf.urls import url, include
 from django.contrib.auth.views import login, logout
-from rest_framework import routers
 
 urlpatterns = [
     url(r'', include('login.urls')),
