@@ -31,7 +31,6 @@ Integrantes:
    Ordenes:
    1. Ver Ordenes Materiales: esta opcion nos permite ver las ordenes de materiales existentes en la BD, con su fecha limite correspondiente, se puede cambiar el estado de la orden a travez del boton, los estado posibles son [Pendiente, Despachado, Entregado]. Favor mantener esos estados, y no usar otros. 
    2. Ordenar Material: esta opcion nos permite crear una nueva orden de material, para esto procedemos a rellenar todos los campos del formulario, teniendo extremo cuidado en el campo de la fecha, ya que si se ingresa un mal formato de fecha la orden no sera agregada y se debera realizar el procedo desde cero. Un buen formato de fecha corresponde a: AAAA-MM-DD. Ademas de que se debe agregar el estado, el cual siempre al crear una orden debe ser "Pendiente".
-   3.Orden de compra: esta opcion nos permite crear una nueva orden de compra que sera enviada a Laudus. Rellenar todos los cambos, eligiendo el material a comprar y su cantidad.
-   4. Ver Ordenes Compra: esta opcion nos permite ver las ordenes de compra que se han creado. 
-   5. ERP: esta opcion nos permite ver las facturas de diferentes usuarios entregados por el ERP.
-   
+   3. Ver Ordenes Compra: esta opcion nos permite ver las ordenes de compra que se han creado. 
+   4. ERP: esta opcion nos permite ver las facturas de diferentes usuarios entregados por el ERP.
+   5. Orden de compra: esta opcion nos permite crear una nueva orden de compra que sera enviada a Laudus. Rellenar todos los cambos, eligiendo el material a comprar y su cantidad.
